@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Lahirnya Pancasila - Blog Klasik Modern</title>
+    <style>
+        /* --- RESET & VARIABEL --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary-color: #8B0000; /* Merah Marun Klasik */
+            --secondary-color: #B8860B; /* Gold/Perunggu kuno */
+            --bg-color: #FDFBF7; /* Putih Gading / Kertas Klasik */
+            --text-color: #2B2B2B;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* Font klasik untuk nuansa sejarah */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            /* Background lambang Pancasila / Garuda */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a6/National_emblem_of_Indonesia_Garuda_Pancasila.svg');
+            background-repeat: no-repeat;
+            background-position: center 300px;
+            background-attachment: fixed;
+            background-size: 60%;
+            /* Efek overlay agar background terlihat transparan/soft dan teks tetap terbaca */
+            backdrop-filter: opacity(0.05);
+            -webkit-backdrop-filter: opacity(0.05);
+        }
+
+        /* Tambahan lapisan transparan di atas background agar teks aman dibaca */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(253, 251, 247, 0.85); /* Menjaga kontras teks */
+            z-index: -1;
+        }
+
+        /* --- HEADER & NAVIGASI --- */
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #f0f0f0;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 0.8rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- LAYOUT UTAMA --- */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* --- KONTEN BLOG (KIRI) --- */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        article {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+        }
+
+        .meta-date {
+            font-size: 0.85rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        article h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        article p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        /* Gaya Khusus untuk Isi Pancasila */
+        .pancasila-list {
+            background-color: #fdf8f0;
+            border: 1px dashed var(--secondary-color);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .pancasila-list ol {
+            padding-left: 1.2rem;
+        }
+
+        .pancasila-list li {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* --- SIDEBAR (KANAN) --- */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--secondary-color);
+        }
+
+        .sidebar-widget h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: right;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            border-top: 3px solid var(--secondary-color);
+        }
+
+        footer p strong {
+            color: #fff;
+        }
+
+        /* --- RESPONSIVE DESAIN --- */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            body {
+                background-size: 90%; /* Perbesar background di HP agar tetap proporsional */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Merajut Sejarah Pancasila</h1>
+        <p>Menelusuri Jejak Lahirnya Dasar Negara Kesatuan Republik Indonesia</p>
+    </header>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#bpupki">Sidang BPUPKI</a>
+        <a href="#pidato">Pidato Sukarno</a>
+        <a href="#piagam">Piagam Jakarta</a>
+    </nav>
+
+    <div class="container">
+        
+        <main>
+            
+            <article id="bpupki">
+                <span class="meta-date">29 Mei - 1 Juni 1945</span>
+                <h2>Sidang Pertama BPUPKI: Perumusan Dasar Negara</h2>
+                <p>Sejarah lahirnya Pancasila bermula dari rangkaian sidang Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia (BPUPKI). Menghadapi situasi perang Pasifik yang kian mendesak, Jepang memberikan janji kemerdekaan kepada Indonesia dan membentuk badan ini.</p>
+                <p>Dalam sidang pertama yang berlangsung di Gedung Chuo Sangi In (sekarang Gedung Pancasila, Jakarta), para tokoh bangsa mulai berdiskusi dan berdebat mengenai fondasi filosofis dari negara yang akan segera lahir. Tokoh-tokoh seperti Mohammad Yamin dan Soepomo turut memaparkan gagasan-gagasan penting mereka mengenai asas dan dasar negara.</p>
+            </article>
+
+            <article id="pidato">
+                <span class="meta-date">1 Juni 1945</span>
+                <h2>Momen Bersejarah: Pidato Lahirnya Pancasila oleh Ir. Sukarno</h2>
+                <p>Pada hari terakhir sidang pertama BPUPKI, tepatnya tanggal 1 Juni 1945, Ir. Sukarno menyampaikan pidato fenomenal tanpa teks. Dalam pidatonya, beliau mengusulkan lima asas dasar negara yang ia sebut dengan nama <strong>"Pancasila"</strong> (Panca berarti lima, Sila berarti asas atau dasar).</p>
+                <p>Sukarno menyampaikan bahwa lima prinsip tersebut adalah pondasi bagi Indonesia merdeka agar kokoh berdiri selamanya. Gagasan ini diterima dengan gegap gempita oleh para anggota sidang, dan momen inilah yang kemudian kita peringati setiap tahunnya sebagai Hari Lahir Pancasila.</p>
+                
+                <div class="pancasila-list">
+                    <p style="font-weight: bold; margin-bottom: 0.5rem; color: var(--primary-color);">Gagasan Awal 5 Sila Versi 1 Juni 1945:</p>
+                    <ol>
+                        <li>Kebangsaan Indonesia (Nasionalisme)</li>
+                        <li>Internasionalisme atau Perikemanusiaan</li>
+                        <li>Mufakat atau Demokrasi</li>
+                        <li>Kesejahteraan Sosial</li>
+                        <li>Ketuhanan yang Berkebudayaan</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article id="piagam">
+                <span class="meta-date">22 Juni - 18 Agustus 1945</span>
+                <h2>Dari Piagam Jakarta hingga Pengesahan Final</h2>
+                <p>Setelah pidato Sukarno, dibentuklah Panitia Sembilan untuk merumuskan kembali Pancasila menjadi teks formal. Pada 22 Juni 1945, lahirlah Piagam Jakarta (*Jakarta Charter*) dengan rumusan sila pertama yang berbunyi: *"Ketuhanan dengan kewajiban menjalankan syariat Islam bagi pemeluk-pemeluknya"*.</p>
+                <p>Namun, demi menjaga persatuan bangsa dan merangkul saudara-saudara dari Indonesia Timur, pada sidang PPKI tanggal 18 Agustus 1945 (sehari setelah proklamasi), sila pertama tersebut disepakati untuk diubah menjadi **"Ketuhanan Yang Maha Esa"**. Rumusan inilah yang menjadi Pancasila sah yang kita kenal dan gunakan hingga hari ini.</p>
+            </article>
+
+        </main>
+
+        <aside>
+            
+            <div class="sidebar-widget">
+                <h3>Kutipan Bersejarah</h3>
+                <p class="quote">"Pancasila adalah meja statis dan leitmotiiv dinamis, yang menuntun bangsa ini menuju cita-citanya."</p>
+                <span class="quote-author">- Ir. Sukarno</span>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Tentang Blog Ini</h3>
+                <p>Website mini ini dibuat untuk mengenang kembali sejarah, perjuangan, dan pemikiran luhur para pendiri bangsa dalam merumuskan dasar negara Indonesia.</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Garis Waktu</h3>
+                <ul style="list-style: none; padding-left: 0; font-size: 0.9rem;">
+                    <li style="margin-bottom: 0.5rem;">📅 <strong>29 Mei 1945:</strong> Sidang BPUPKI dimulai</li>
+                    <li style="margin-bottom: 0.5rem;">📅 <strong>1 Juni 1945:</strong> Pidato Pancasila Bung Karno</li>
+                    <li style="margin-bottom: 0.5rem;">📅 <strong>22 Juni 1945:</strong> Piagam Jakarta dicetuskan</li>
+                    <li style="margin-bottom: 0.5rem;">📅 <strong>18 Agustus 1945:</strong> Pengesahan Resmi Pancasila</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Blog Sejarah Indonesia. Terinspirasi dari Nilai Luhur <strong>Pancasila</strong>.</p>
+    </footer>
+
+</body>
+</html>
